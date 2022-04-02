@@ -84,7 +84,7 @@ nav ul a:hover {
 
   header {
       height: 530px;
-      background: linear-gradient(90deg, rgba(44, 44, 44, 1)67%, rgba(255, 182, 51, 1) 67%);
+      background: linear-gradient(90deg, rgba(44, 44, 44, 1) 67%, rgba(255, 182, 51, 1) 67%);
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -111,7 +111,7 @@ nav ul a:hover {
   }
 
   .btnContactHeader {
-      margin-top: 89px;
+      margin-top: 65px;
       width: 148px;
       height: 43px;
       font-family: 'Dancing Script', cursive;
