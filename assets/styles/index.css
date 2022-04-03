@@ -240,3 +240,105 @@ nav ul a:hover {
     width: 189px;
     height: 86px;
 }
+
+
+/* Skills */
+
+.titleSkills {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    color: #fff;
+    margin-left: 230px;
+    padding-top: 103px;
+}
+
+#row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 85px;
+}
+
+#descriptionTech {
+    margin: 130px 0  0 221px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+#cards {
+    width: 719px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#cardRow {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+#iconsCards {
+    margin: 33px 41px;
+}
+
+#iconPhp {
+    margin: 40px 28px;
+}
+
+#line {
+    width: 863px;
+    height: 3px;
+    border: none;
+    background-color: #fff;
+    margin: 90px auto 100px auto;
+}
+
+
+/* Projects  */
+
+
+.container {
+    margin: 0 auto;
+    display: grid;
+    width: 70%;
+    height: 100%;
+    grid-template-areas: "project1 project2 project3"
+    "project4 project5 project6";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .container > div {
+    border: 1px dashed #888;
+  }
+  
+  .project1 {
+    grid-area: project1;
+  }
+
+  .project2 {
+    grid-area: project2;
+  }
+
+  .project3 {
+    grid-area: project3;
+  }
+
+  .project4 {
+    grid-area: project4;
+  }
+
+  .project5 {
+    grid-area: project5;
+  }
+
+  .project6 {
+    grid-area: project6;
+  }
+
+  .project2 {
+      height: 100px;
+  }
