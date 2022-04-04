@@ -298,21 +298,22 @@ nav ul a:hover {
 }
 
 
+
 /* Projects  */
-
-
 .container {
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
     display: grid;
     width: 70%;
     height: 100%;
     grid-template-areas: "project1 project2 project3"
     "project4 project5 project6";
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
   .container > div {
-    border: 1px dashed #888;
+    margin: 10px;
+    background-color: #C4C4C4;
+    border-radius: 10px;
   }
   
   .project1 {
@@ -339,6 +340,91 @@ nav ul a:hover {
     grid-area: project6;
   }
 
-  .project2 {
-      height: 100px;
+  .project1, .project2, .project3, .project4, .project5, .project6 {
+      height: 250px;
   }
+
+
+/* Contact Me */
+.contactMe {
+    height: 650px;
+}
+
+.formContactMe {
+    width: 626px;
+    height: 410px;
+    background-color: #fff;
+    margin: 30px auto 0 auto;
+}
+
+#titleForm {
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+#textsParagraph {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 10px auto;
+}
+
+#textForm {
+    width: 270px;
+    height: 21px;
+}
+
+#textAreaForm {
+    width: 270px;
+    height: 120px;
+}
+
+
+/* Footer */
+footer {
+    background-image: url('/assets/img/Bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+#textBottom {
+    padding-top: 217px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+#linkTextBottom {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    transition: .8s;
+}
+
+#linkTextBottom:hover {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+#lineBottomFooter {
+    width: 339px;
+    height: 2px;
+    border: none;
+    background-color: #fff;
+    margin: 7px auto;
+}
+
+#yearText {
+    font-weight: bold;
+}
