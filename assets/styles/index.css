@@ -243,13 +243,15 @@ nav ul a:hover {
 
 
 /* Skills */
+.skills {
+    margin-top: 50px;
+}
 
 .titleSkills {
     font-family: 'Anton', sans-serif;
     font-size: 40px;
     color: #fff;
     margin-left: 230px;
-    padding-top: 103px;
 }
 
 #row {
@@ -282,7 +284,7 @@ nav ul a:hover {
 }
 
 #iconsCards {
-    margin: 33px 41px;
+    margin: 33px 38px;
 }
 
 #iconPhp {
@@ -293,8 +295,8 @@ nav ul a:hover {
     width: 863px;
     height: 3px;
     border: none;
-    background-color: #fff;
-    margin: 90px auto 100px auto;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    margin: 100px auto 100px auto;
 }
 
 
@@ -318,36 +320,86 @@ nav ul a:hover {
   
   .project1 {
     grid-area: project1;
+    background-image: url('/assets/img/project1.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
   .project2 {
     grid-area: project2;
+    background-image: url('/assets/img/project2.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
   .project3 {
     grid-area: project3;
+    background-image: url('/assets/img/project3.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
   .project4 {
     grid-area: project4;
+    background-image: url('/assets/img/breve.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .project5 {
     grid-area: project5;
+    background-image: url('/assets/img/breve.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .project6 {
     grid-area: project6;
+    background-image: url('/assets/img/breve.png');
+    background-size: cover;
+    background-position: center;
   }
 
   .project1, .project2, .project3, .project4, .project5, .project6 {
       height: 250px;
   }
 
+  .description {
+      width: 100%;
+      height: 35px;
+      background-color: #4b4b4bb8;
+      margin-top: 207px;
+      color: #fff;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+      padding-top: 8px;
+  }
+
+  #link-project {
+      text-decoration: none;
+      color: #fff;
+      transition: .5s;
+  }
+
+  #link-project:hover {
+    color: #000000;
+}
+
+#explanation {
+    text-align: center;
+    color: #FFB633;
+    margin-top: 20px;
+}
+
 
 /* Contact Me */
 .contactMe {
     height: 650px;
+    margin-top: 50px;
 }
 
 .formContactMe {
@@ -355,13 +407,15 @@ nav ul a:hover {
     height: 410px;
     background-color: #fff;
     margin: 30px auto 0 auto;
+    border-radius: 50px;
 }
 
 #titleForm {
     font-family: 'Anton', sans-serif;
     font-size: 36px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    padding-top: 25px;
 }
 
 form {
@@ -395,8 +449,21 @@ form {
 }
 
 #btnForm {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
     width: 195px;
     height: 36px;
+    border-radius: 10px;
+    background-color: #FFB633;
+    cursor: pointer;
+    border: none;
+    color: #000;
+    transition: .5s;
+}
+
+#btnForm:hover {
+    background-color: transparent;
+    border: 1px solid #FFB633;
 }
 
 
@@ -431,11 +498,11 @@ footer {
 }
 
 #lineBottomFooter {
-    width: 339px;
-    height: 2px;
+    width: 200px;
+    height: 1px;
     border: none;
     background-color: #fff;
-    margin: 7px auto;
+    margin: 8px auto;
 }
 
 #yearText {
