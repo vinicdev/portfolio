@@ -9,6 +9,7 @@
     --cor-secondary: #2c2c2c;
     --cor-lineGradient: #ffffff00;
     --description-cardProject: #4b4b4bb8;
+    --description-cardProjetoHover: #8a8a8ab8;
 }
 
 * {
@@ -104,7 +105,8 @@ nav ul a:hover {
   }
 
   .texts {
-    margin: 207px 157px;
+    margin: 207px auto 0 auto;
+    width: 35%;
   }
 
   #txt-description1, #txt-description2 {
@@ -115,14 +117,10 @@ nav ul a:hover {
 
   #name-vini {
     font-family: 'Anton', sans-serif;
-    font-size: 40px;
+    font-size: 2vw;
+    /* font-size: 40px; */
     color: var(--cor-principal);
   }
-
-  #txt-description2 {
-      float: right;
-  }
-
   .btnContactHeader {
       margin-top: 65px;
       width: 148px;
@@ -143,7 +141,7 @@ nav ul a:hover {
   }
 
   .logoVini {
-      margin: 40px 367px 0 0;
+      margin: 40px 280px 0 0;
   }
 
   /* Main */
@@ -227,18 +225,19 @@ nav ul a:hover {
 #cardsServices {
     display: flex;
     flex-direction: row;
-    margin: 135px auto 0 auto;
-    width: 1123px;
+    flex-wrap: wrap;
+    margin: 150px auto 0 auto;
+    width: 80%;
+    gap: 102px;
 }
 
 .card {
     display: flex;
     flex-direction: row;
-    margin-right: 113px;
-}
+}   
 
 #titleAndDescription {
-    margin: 15px 0 8px 30px;
+    margin: 15px 0 8px 15px;
 }
 
 #titleIconsServices {
@@ -289,7 +288,7 @@ nav ul a:hover {
     gap: 30px;
 }
 
-#cardRow {
+.cardRow {
     background-color: var(--white);
     border-radius: 10px;
     width: 120px;
@@ -389,6 +388,12 @@ nav ul a:hover {
       font-family: 'Inter', sans-serif;
       font-weight: bold;
       padding-top: 8px;
+      transition: .8s;
+  }
+
+  .description:hover {
+    background-color: var(--description-cardProjetoHover);
+    color: var(--black);
   }
 
   #link-project {
@@ -519,4 +524,50 @@ footer {
 
 #yearText {
     font-weight: bold;
+}
+
+
+/* Responsive */
+@media (max-width: 1356px) {
+    .logoVini {
+        margin: 40px 231px 0 0;
+    }
+
+    #titleIconsServices {
+        font-size: 30px;
+    }
+
+    #textIconsServices {
+        font-size: 13px;
+    }
+
+    #cardsServices {
+        width: 80%;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1202px) {
+    .logoVini {
+        margin: 40px 230px 0 0;
+    }
+    
+    #cardsServices {
+        width: 90%;
+    }
+
+    #descriptionTech {
+        width: 320px;
+    }
+
+    .titleAlternative, .titleSkills {
+        margin-left: 160px;
+    }
+
+}
+
+@media (max-width: 1114px) {
+    #cardsServices {
+        
+    }
 }

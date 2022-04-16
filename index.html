@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-project">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Inter:wght@200;300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/index.css">
     <title>Vini Cardoso - Developer</title>
@@ -11,7 +12,7 @@
 <body>
     <!-- nav -->
     <nav>
-        <img src="assets/img/logo-vini.png">
+        <img src="assets/img/favicon.png">
         <ul>
             <a href="#about" class="hvr-underline-from-center"><li>Sobre</li></a>
             <a href="#project" class="hvr-underline-from-center"><li>Projetos</li></a>
@@ -118,35 +119,35 @@
                 </div>
 
                 <div id="cards">
-                    <div id="cardRow">
+                    <div class="html cardRow" onmousemove="skill1()" onmouseout="sair()">
                         <img src="assets/img/HTML5.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="css cardRow" onmousemove="skill2()" onmouseout="sair()">
                         <img src="assets/img/CSS3.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="js cardRow" onmousemove="skill3()" onmouseout="sair()">
                         <img src="assets/img/JS.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="react cardRow" onmousemove="skill4()" onmouseout="sair()">
                         <img src="assets/img/REACT.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="bootstrap cardRow" onmousemove="skill5()" onmouseout="sair()">
                         <img src="assets/img/BOOTSTRAP.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="github cardRow" onmousemove="skill6()" onmouseout="sair()">
                         <img src="assets/img/GITHUB.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="figma cardRow" onmousemove="skill7()" onmouseout="sair()">
                         <img src="assets/img/Vector.png" id="iconsCards" alt="">
                     </div>
 
-                    <div id="cardRow">
+                    <div class="php cardRow" onmousemove="skill8()" onmouseout="sair()">
                         <img src="assets/img/PHP.png" alt="" id="iconPhp">
                     </div>
 
@@ -165,51 +166,51 @@
             </h1>
             <div class="container">
                 <div class="project1">
-                    <div class="description">
-                        <a href="https://project2.vinicodes.tech/" id="link-project">
+                    <a href="https://project2.vinicodes.tech/" id="link-project">
+                        <div class="description">
                             API Harry Potter
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="project2">
-                    <div class="description">
-                        <a href="https://project1.vinicodes.tech/" id="link-project">
+                    <a href="https://project1.vinicodes.tech/" id="link-project">
+                        <div class="description">
                             Future Dixcord
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="project3">
-                    <div class="description">
-                        <a href="https://www.vinicodes.tech/" id="link-project">
+                    <a href="https://www.vinicodes.tech/" id="link-project">
+                        <div class="description">
                             BIO 
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="project4">
-                    <div class="description">
-                        <a href="#" id="link-project">
+                    <a href="#" id="link-project">
+                        <div class="description">
                             Wait for new projects 
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="project5">
-                    <div class="description">
-                        <a href="#" id="link-project">
+                    <a href="#" id="link-project">
+                        <div class="description">
                             Wait for new projects 
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="project6">
-                    <div class="description">
-                        <a href="#" id="link-project">
+                    <a href="#" id="link-project">
+                        <div class="description">
                             Wait for new projects 
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
 
             </div>
@@ -227,7 +228,7 @@
 
             <div class="formContactMe">
                 <h1 id="titleForm">Send your message<h1>
-                    <form action="">
+                    <form action="https://formsubmit.co/contato@vinicardoso.dev.br" method="POST">
                         <div id="textsParagraph">
                             <label>Name</label>
                             <input type="text" name="nameForm" id="textForm" placeholder="Type your name">
@@ -262,5 +263,8 @@
         </footer>
 
     </main>
+
+    <!-- Scripts -->
+    <script src="/assets/script/main.js"></script>
 </body>
 </html>
