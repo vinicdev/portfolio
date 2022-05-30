@@ -243,6 +243,7 @@ nav ul a:hover {
 
 #titleAndDescription {
     margin: 15px 0 8px 15px;
+    width: 250px;
 }
 
 #titleIconsServices {
@@ -254,7 +255,8 @@ nav ul a:hover {
 #textIconsServices {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    width: 189px;
+    text-align: justify;
+    width: 200px;
     height: 86px;
 }
 
