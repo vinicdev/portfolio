@@ -175,6 +175,8 @@ nav ul a:hover {
   }
 
   #textDefault {
+    width: 90%;
+    text-align: justify;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     line-height: 28px;
