@@ -239,7 +239,7 @@ nav ul a:hover {
     padding-right: 100px;
 }   
 
-.cardServices:nth-child(3) {
+.cardWork:nth-child(3) {
     padding-right: 0;
 }
 
@@ -543,6 +543,16 @@ footer {
 
 
 /* Responsive */
+@media (max-width: 1480px) {
+    #cardsServices {
+        margin: 100px auto 0 auto;
+    }
+
+    .cardWork:nth-child(2) {
+        padding-right: 0;
+    }
+}
+
 @media (max-width: 1356px) {
     .logoVini {
         margin: 40px 231px 0 0;
@@ -601,7 +611,7 @@ footer {
         margin: 90px auto 0 auto;
     }
     
-    .card:nth-child(2) {
+    .cardWork:nth-child(2) {
         padding-right: 0;
     }
 
@@ -690,5 +700,11 @@ footer {
 @media (max-width: 799px) {
     body {
         width: 130%;
+    }
+}
+
+@media (max-width: 678px) {
+    #cards {
+        width: 70%;
     }
 }
