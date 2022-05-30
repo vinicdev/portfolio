@@ -19,12 +19,12 @@
 
 body {
     background-color: var(--cor-bg-principal);
+    width: 100%;
 }
 
 /* Nav */
 nav {
     background-color: var(--cor-bg-principal);
-    width: auto;
     height: 60px;
     overflow-x: hidden;
     border-bottom: 2px solid var(--cor-border);
@@ -233,13 +233,13 @@ nav ul a:hover {
     width: 90%;
 }
 
-.card {
+.cardWork {
     display: flex;
     flex-direction: row;
     padding-right: 100px;
 }   
 
-.card:nth-child(3) {
+.cardServices:nth-child(3) {
     padding-right: 0;
 }
 
@@ -329,7 +329,7 @@ nav ul a:hover {
 
 
 /* Projects  */
-.container {
+.spaceCardsProjects {
     margin: 40px auto 0 auto;
     display: grid;
     width: 70%;
@@ -339,7 +339,7 @@ nav ul a:hover {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .container > div {
+  .spaceCardsProjects > div {
     margin: 10px;
     border-radius: 10px;
   }
@@ -655,7 +655,7 @@ footer {
         align-items: center;
     }
     
-    .card {
+    .cardWork {
         padding-right: 0;
     }
 
@@ -675,8 +675,20 @@ footer {
     }
 
     #cards {
-        width: 80%;
+        width: 67%;
         gap: 20px 33px;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 863px) {
+    body {
+        width: 108%;
+    }
+}
+
+@media (max-width: 799px) {
+    body {
+        width: 130%;
     }
 }
