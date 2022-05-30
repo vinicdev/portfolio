@@ -27,7 +27,7 @@ nav {
     width: auto;
     height: 60px;
     overflow-x: hidden;
-    border: 1px solid var(--cor-border);
+    border-bottom: 2px solid var(--cor-border);
     color: var(--white);
     display: flex;
     justify-content:  space-between;
