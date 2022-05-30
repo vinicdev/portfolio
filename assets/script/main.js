@@ -42,3 +42,7 @@ function skill8() {
 function sair() {
     document.getElementById("descriptionTech").innerHTML = "* Passe o mouse por cima do card para ler"
 }   
+
+function aviso () {
+    alert("This project is private, sorry!")
+}

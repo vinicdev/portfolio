@@ -354,28 +354,28 @@ nav ul a:hover {
 
   .project3 {
     grid-area: project3;
-    background-image: url('/assets/img/project3.jpg');
+    background-image: url('/assets/img/project3.png');
     background-size: cover;
     background-position: center;
   }
 
   .project4 {
     grid-area: project4;
-    background-image: url('/assets/img/breve.png');
+    background-image: url('/assets/img/project4.jpg');
     background-size: cover;
     background-position: center;
   }
 
   .project5 {
     grid-area: project5;
-    background-image: url('/assets/img/breve.png');
+    background-image: url('/assets/img/project5.png');
     background-size: cover;
     background-position: center;
   }
 
   .project6 {
     grid-area: project6;
-    background-image: url('/assets/img/breve.png');
+    background-image: url('/assets/img/project6.png');
     background-size: cover;
     background-position: center;
   }
