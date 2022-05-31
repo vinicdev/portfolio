@@ -769,6 +769,154 @@ footer {
     }
 }
 
+@media (max-width: 425px) {
+    #txt-description1, #txt-description2 {
+        font-size: 45px;
+    }
+
+    #name-vini {
+        font-size: 40px
+    }
+
+    #textDefault {
+        font-size: 25px;
+        line-height: 37px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #contentGeneral {
+        width: 100%;
+        height: 427px;
+    }
+
+    .services {
+        height: 1200px;
+    }
+
+    
+    #textIconsServices {
+        font-size: 18px;
+    }
+    
+    #cardsServices {
+        margin: 10px auto 0 auto;
+        gap: 150px;
+    }
+
+    .cardWork {
+        width: 405px;
+        height: 220px;
+    }
+
+    #img img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #titleIconsServices {
+        font-size: 50px;
+    }
+    
+    #textIconsServices {
+        width: 331px;
+        height: 216px;
+        font-size: 27px;
+    }
+
+    .texts {
+        width: 45%;
+        margin: 75px auto 0 auto;
+    }
+
+    #descriptionTech {
+        width: 90%;
+        font-size: 22px;
+    }
+
+    #cards {
+        width: 85%;
+    }
+
+    .cardRow {
+        width: 351px;
+
+    }
+
+    .spaceCardsProjects {
+        width: 95%;
+        grid-template-areas:
+            "project1 project2"
+            "project3 project4"
+            "project5 project6";
+        grid-template-columns: 1fr 1fr ;
+    }
+
+    .project1, .project2, .project3, .project4, .project5, .project6 {
+        height: 350px;
+    }
+
+    .description {
+        height: 70px;
+        margin-top: 245px;
+        font-size: 25px;
+        padding-top: 35px;
+    }
+
+    #explanation {
+        font-size: 34px;
+    }
+
+    .formContactMe {
+        width: 95%;
+        height: 520px;
+    }
+    
+    form {
+        font-size: 25px;
+    }
+
+    #textsParagraph {
+        width: 530px;
+    }
+    
+    #textForm {
+        font-size: 22px;
+        width: 400px;
+        height: 50px;
+    }
+
+    #textAreaForm {
+        font-size: 22px;
+        width: 393px;
+        height: 200px;
+        border-radius: 10px;
+        border: 2px solid var(--cor-principal);
+    }
+
+
+    #textBottom {
+        font-size: 30px;
+    }
+
+    #yearText {
+        font-size: 30px;
+    }
+
+}
+
+
+
+@media (max-width: 414px) {
+    .cardRow {
+        width: 734px;
+    }
+
+    #iconsCards {
+        margin: 33px 0 0 342px;
+    }
+}
+
 @media (max-width: 393px) {
     body {
         width: 245%;
