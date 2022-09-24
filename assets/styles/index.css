@@ -15,6 +15,11 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
 }
 
 body {
@@ -53,7 +58,7 @@ nav ul a {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     margin-left: 20px;
 }
 
@@ -110,7 +115,7 @@ nav ul a:hover {
 
   #txt-description1, #txt-description2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--white);
   }
 
@@ -119,17 +124,25 @@ nav ul a:hover {
     font-size: 4vw;
     color: var(--cor-principal);
   }
-  .btnContactHeader {
-      margin-top: 65px;
+
+.btnContactHeader {
+      font-size: 1.25rem;
       width: 148px;
       height: 43px;
       font-family: 'Dancing Script', cursive;
       background-color: transparent;
       border: 1px solid var(--cor-principal);
       color: var(--white);
-      font-size: 20px;
       transition: .8s;
       cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .btnPrimary {
+      margin-top: 65px;
   }
 
   .btnContactHeader:hover {
@@ -161,7 +174,7 @@ nav ul a:hover {
 
   .title {
     font-family: 'Anton', sans-serif;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: var(--white);
     margin-bottom: 30px;
   }
@@ -177,9 +190,19 @@ nav ul a:hover {
     width: 90%;
     text-align: justify;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: .875rem;
     line-height: 28px;
     color: var(--white);
+  }
+
+  #bntDouble {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-top: 40px;
+    gap: 15px;
   }
 
   .btnContactAbout {
@@ -191,6 +214,10 @@ nav ul a:hover {
       cursor: pointer;
       border: none;
       font-family: 'Dancing Script', cursive;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
   .btnContactAbout:hover {
@@ -210,7 +237,7 @@ nav ul a:hover {
 
   .titleAlternative {
     font-family: 'Anton', sans-serif;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: var(--black);
     margin-left: 230px;
     padding-top: 103px;
@@ -255,14 +282,14 @@ nav ul a:hover {
 }
 
 #titleIconsServices {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-family: 'Anton', sans-serif;
 
 }
 
 #textIconsServices {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: .875rem;
     text-align: justify;
     width: 200px;
     height: 86px;
@@ -276,7 +303,7 @@ nav ul a:hover {
 
 .titleSkills {
     font-family: 'Anton', sans-serif;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: var(--white);
     margin-left: 230px;
 }
@@ -296,7 +323,7 @@ nav ul a:hover {
     text-align: justify;
     margin-top: 130px;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 30px;
     color: var(--white);
 }
@@ -405,7 +432,7 @@ nav ul a:hover {
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
       text-align: center;
-      font-size: 18px;
+      font-size: 1.125rem;
       font-family: 'Inter', sans-serif;
       font-weight: bold;
       padding-top: 8px;
@@ -450,7 +477,7 @@ nav ul a:hover {
 
 #titleForm {
     font-family: 'Anton', sans-serif;
-    font-size: 36px;
+    font-size: 2.25rem;
     text-align: center;
     margin-bottom: 25px;
     padding-top: 25px;
@@ -459,7 +486,7 @@ nav ul a:hover {
 form {
     font-family: 'Inter', sans-serif;
     font-weight: lighter;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 #textsParagraph {
@@ -488,7 +515,7 @@ form {
 
 #btnForm {
     font-family: 'Dancing Script', cursive;
-    font-size: 22px;
+    font-size: 1.375rem;
     width: 195px;
     height: 36px;
     border-radius: 10px;
@@ -518,7 +545,7 @@ footer {
 
 #textBottom {
     padding-top: 217px;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: lighter;
 }
 
@@ -565,11 +592,11 @@ footer {
     }
 
     #titleIconsServices {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 
     #textIconsServices {
-        font-size: 13px;
+        font-size: .8125rem;
     }
 
     #cardsServices {
@@ -778,15 +805,15 @@ footer {
 
 @media (max-width: 425px) {
     #txt-description1, #txt-description2 {
-        font-size: 45px;
+        font-size: 2.8125rem;
     }
 
     #name-vini {
-        font-size: 40px
+        font-size: 2.5rem;
     }
 
     #textDefault {
-        font-size: 25px;
+        font-size: 1.5625rem;
         line-height: 37px;
         margin: 0 auto;
         width: 100%;
@@ -803,7 +830,7 @@ footer {
 
     
     #textIconsServices {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     
     #cardsServices {
@@ -822,13 +849,13 @@ footer {
     }
 
     #titleIconsServices {
-        font-size: 50px;
+        font-size: 3.125rem;
     }
     
     #textIconsServices {
         width: 331px;
         height: 216px;
-        font-size: 27px;
+        font-size: 1.6875rem;
     }
 
     .texts {
@@ -838,7 +865,7 @@ footer {
 
     #descriptionTech {
         width: 90%;
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     #cards {
@@ -866,12 +893,12 @@ footer {
     .description {
         height: 70px;
         margin-top: 245px;
-        font-size: 25px;
+        font-size: 1.5625rem;
         padding-top: 35px;
     }
 
     #explanation {
-        font-size: 34px;
+        font-size: 2.125rem;
     }
 
     .formContactMe {
@@ -880,7 +907,7 @@ footer {
     }
     
     form {
-        font-size: 25px;
+        font-size: 1.5625rem;
     }
 
     #textsParagraph {
@@ -888,13 +915,13 @@ footer {
     }
     
     #textForm {
-        font-size: 22px;
+        font-size: 1.375rem;
         width: 400px;
         height: 50px;
     }
 
     #textAreaForm {
-        font-size: 22px;
+        font-size: 1.375rem;
         width: 393px;
         height: 200px;
         border-radius: 10px;
@@ -903,11 +930,11 @@ footer {
 
 
     #textBottom {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 
     #yearText {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 
 }
