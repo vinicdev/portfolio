@@ -262,14 +262,17 @@ nav ul a:hover {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 150px;
+    gap: 45px;
     width: 90%;
 }
 
 .cardWork {
+    width: 27%;
     display: flex;
     flex-direction: row;
-    padding-right: 100px;
     justify-content: center;
+
+    gap: 15px;
 }   
 
 .cardWork:nth-child(3) {
@@ -277,8 +280,10 @@ nav ul a:hover {
 }
 
 #titleAndDescription {
-    margin: 15px 0 8px 15px;
-    width: 250px;
+    width: 80%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #titleIconsServices {
@@ -589,15 +594,6 @@ footer {
 
 
 /* Responsive */
-@media (max-width: 1480px) {
-    #cardsServices {
-        margin: 100px auto 0 auto;
-    }
-
-    .cardWork:nth-child(2) {
-        padding-right: 0;
-    }
-}
 
 @media (max-width: 1356px) {
     .logoVini {
