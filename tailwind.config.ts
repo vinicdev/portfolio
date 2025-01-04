@@ -41,7 +41,7 @@ const config: Config = {
 
         // Auxiliary colors
         red: "var(--red)",
-        green: "var(--green)",
+        "blue-auxiliary": "var(--blue-auxiliary)",
         yellow: "var(--yellow)",
       },
       backgroundImage: {
