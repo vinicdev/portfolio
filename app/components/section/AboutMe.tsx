@@ -3,7 +3,7 @@ import Title from "../Title";
 
 export default function AboutMe() {
   return (
-    <div className="px-20 flex justify-between items-center gap-4 flex-wrap min-h-[500px] h-auto max-md:px-4 max-md:justify-center">
+    <div className="max-w-[1440px] mx-autoj px-20 flex justify-between items-center gap-4 flex-wrap min-h-[500px] h-auto max-md:px-4 max-md:justify-center">
       <div>
         <Title titleText="Sobre mim" />
         <div className="resize-about-text max-w-[660px] font-bold text-white-light">

@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import Button from "../Button";
+// import { useState } from "react";
+// import Button from "../Button";
 import CardService from "../CardService";
 
 export default function Service() {
-  const [moreService, setMoreService] = useState<boolean>(false);
+  // const [moreService, setMoreService] = useState<boolean>(false);
 
-  const OpenMoreServices = () => {
-    setMoreService(!moreService);
-  };
+  // const OpenMoreServices = () => {
+  //   setMoreService(!moreService);
+  // };
 
   return (
     <section className="relative w-full min-h-[558px] h-auto my-52">
@@ -19,7 +19,7 @@ export default function Service() {
       ></div>
 
       <div className="flex flex-col items-center gap-12 mb-6">
-        <div className="relative z-10 h-full gap-12 flex flex-col items-center px-4">
+        <div className="relative z-10 h-full gap-12 flex flex-col items-center px-4 max-w-[1440px]">
           <div className=" flex flex-wrap justify-center items-end gap-12">
             <CardService
               title="Design intuitivo "
@@ -55,8 +55,8 @@ export default function Service() {
             </CardService>
           </div>
 
-          {moreService && (
-            <div className=" flex flex-wrap justify-center items-start gap-12">
+          {/* {moreService && (
+            <div className="flex flex-wrap justify-center items-start gap-12">
               <CardService
                 title="Design intuitivo "
                 text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -90,12 +90,13 @@ export default function Service() {
                 />
               </CardService>
             </div>
-          )}
+          )} */}
         </div>
 
-        <Button onClick={OpenMoreServices}>
+        {/* Botão ver mais serviços */}
+        {/* <Button onClick={OpenMoreServices}>
           {moreService ? "Ver menos" : "Ver todos serviços "}
-        </Button>
+        </Button> */}
       </div>
     </section>
   );
