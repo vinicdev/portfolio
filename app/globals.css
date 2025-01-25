@@ -108,3 +108,31 @@ body {
 .box-shadow {
   box-shadow: 0px 4px 8px 0px rgba(255, 255, 255, 0.04);
 }
+
+.icon-angular {
+  background-image: url("/icon_angular.svg");
+}
+
+.icon-dotnet {
+  background-image: url("/icon_dotnet.svg");
+}
+
+.icon-flutter {
+  background-image: url("/icon_flutter.svg");
+}
+
+.icon-nextjs {
+  background-image: url("/icon_nextjs.svg");
+}
+
+.icon-react {
+  background-image: url("/icon_react.svg");
+}
+
+.icon-typescript {
+  background-image: url("/icon_typescript.svg");
+}
+
+.icon-star {
+  background-image: url("/icon_star.svg");
+}
