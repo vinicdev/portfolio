@@ -19,7 +19,7 @@ export default function CardService({
     <div
       className={`w-[300px] p-4 pt-12 rounded-lg bg-400 flex flex-col items-center box-shadow 
       h-[${selectedHeight}] ${selectedHeight === "300px" ? "h-[300px]" : ""}
-      max-[995px]:!h-[300px] max-sm:!w-[80%]`}
+      max-[995px]:!h-[300px] max-sm:!w-[100%]`}
       style={{ height: `${height}px` }}
     >
       {children}

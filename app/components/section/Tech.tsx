@@ -4,7 +4,7 @@ import SmallLink from "../SmallLink";
 
 export default function Tech() {
   return (
-    <Container style="my-[200px] flex-wrap flex flex-row justify-between items-center gap-6">
+    <Container style="mb-[200px] flex-wrap flex flex-row justify-between items-center gap-6 max-sm:mb-40">
       <div className="resize-about-text max-w-[660px] font-bold text-white-light">
         Trabalho com
         <span className="italic text-white-dark"> técnologias de ponta</span>

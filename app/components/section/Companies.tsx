@@ -4,7 +4,7 @@ import Title from "../Title";
 
 export default function Companies() {
   return (
-    <Container style="flex flex-col gap-6 my-[200px]">
+    <Container style="flex flex-col gap-6 mb-[200px] max-sm:mb-40">
       <Title titleText="Empresas" />
 
       <div className="flex flex-col gap-20">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface cardCompaniesProps {
+interface CardCompaniesProps {
   textCard: string;
   imageSrc: string;
 }
@@ -8,7 +8,7 @@ interface cardCompaniesProps {
 export default function CardCompanies({
   textCard,
   imageSrc,
-}: cardCompaniesProps) {
+}: CardCompaniesProps) {
   let altImage = "";
 
   if (textCard === "BNE" || textCard === "360 ERP") {
@@ -18,8 +18,8 @@ export default function CardCompanies({
   }
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="w-[200px] h-[200px] border-[1px] border-600 bg-gradient-3 rounded flex items-center justify-center overflow-hidden">
+    <div className="flex flex-col items-start gap-2 max-sm:w-full">
+      <div className="w-[250px] h-[350px] border border-600 bg-gradient-3 rounded flex items-center justify-center overflow-hidden max-sm:w-full">
         <div className="w-[80%] h-[80%] flex items-center justify-center">
           <Image
             src={`/companies/${imageSrc}.png`}

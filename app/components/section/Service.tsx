@@ -3,6 +3,7 @@
 // import { useState } from "react";
 // import Button from "../Button";
 import CardService from "../CardService";
+import Title from "../Title";
 
 export default function Service() {
   // const [moreService, setMoreService] = useState<boolean>(false);
@@ -12,50 +13,52 @@ export default function Service() {
   // };
 
   return (
-    <section className="relative w-full min-h-[558px] h-auto my-52">
-      <div
-        className="absolute bottom-0 left-0 w-full h-[80%] z-0"
-        style={{ backgroundImage: `var(--gradiend-3)` }}
-      ></div>
+    <>
+      <section className="relative w-full min-h-[558px] h-auto my-52 max-sm:my-62">
+        <div
+          className="absolute bottom-0 left-0 w-full h-[80%] z-0 bg-black-normal"
+          // style={{ backgroundImage: `var(--gradiend-3)` }}
+        ></div>
 
-      <div className="flex flex-col items-center gap-12 mb-6">
-        <div className="relative z-10 h-full gap-12 flex flex-col items-center px-4 max-w-[1440px]">
-          <div className=" flex flex-wrap justify-center items-end gap-12">
-            <CardService
-              title="Design intuitivo "
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              height="300"
-            >
-              <div
-                style={{ backgroundImage: "url(./free_pen.svg)" }}
-                className="w-[60px] h-[60px] bg-no-repeat"
-              />
-            </CardService>
+        <div className="flex flex-col items-center gap-12 mb-6">
+          <div className="relative z-10 h-full gap-12 flex flex-col items-start px-4 max-w-[1440px]">
+            <Title titleText="Serviços" />
+            <div className=" flex flex-wrap justify-center items-end gap-12">
+              <CardService
+                title="Design intuitivo "
+                text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                height="300"
+              >
+                <div
+                  style={{ backgroundImage: "url(./free_pen.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
 
-            <CardService
-              title="Design intuitivo "
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              height="350"
-            >
-              <div
-                style={{ backgroundImage: "url(./computer.svg)" }}
-                className="w-[60px] h-[60px] bg-no-repeat"
-              />
-            </CardService>
+              <CardService
+                title="Design intuitivo "
+                text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                height="350"
+              >
+                <div
+                  style={{ backgroundImage: "url(./computer.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
 
-            <CardService
-              title="Design intuitivo "
-              text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              height="300"
-            >
-              <div
-                style={{ backgroundImage: "url(./world-search.svg)" }}
-                className="w-[60px] h-[60px] bg-no-repeat"
-              />
-            </CardService>
-          </div>
+              <CardService
+                title="Design intuitivo "
+                text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                height="300"
+              >
+                <div
+                  style={{ backgroundImage: "url(./world-search.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+            </div>
 
-          {/* {moreService && (
+            {/* {moreService && (
             <div className="flex flex-wrap justify-center items-start gap-12">
               <CardService
                 title="Design intuitivo "
@@ -91,13 +94,14 @@ export default function Service() {
               </CardService>
             </div>
           )} */}
-        </div>
+          </div>
 
-        {/* Botão ver mais serviços */}
-        {/* <Button onClick={OpenMoreServices}>
+          {/* Botão ver mais serviços */}
+          {/* <Button onClick={OpenMoreServices}>
           {moreService ? "Ver menos" : "Ver todos serviços "}
         </Button> */}
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

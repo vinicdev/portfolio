@@ -14,9 +14,16 @@ export default function Home() {
     ".NET",
     "AngularJS",
     "NodeJS",
+    "React",
+    "Fluter",
+    "NextJS",
+    "Typescript",
+    ".NET",
+    "AngularJS",
+    "NodeJS",
   ];
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <Header />
       <AboutMe />
       <Service />
