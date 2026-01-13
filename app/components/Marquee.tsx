@@ -1,5 +1,7 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
+import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
 
 interface MarqueeProps {
@@ -15,11 +17,28 @@ export default function CustomMarquee({
   speed = 50,
   className = "",
 }: MarqueeProps) {
-  return (
-    <div className={`overflow-hidden ${className} py-12 relative`}>
-      <div className="absolute w-[102%] h-[115px] bg-gradient-2 transform rotate-[-3deg] -left-2 -z-10" />
+  const shouldReduceMotion = useReducedMotion();
 
-      <div className="flex items-center w-full h-[104px] bg-white-dark z-20">
+  const transitionConfig = useMemo(
+    () => ({
+      type: "spring" as const,
+      damping: 25,
+      stiffness: 100,
+    }),
+    []
+  );
+
+  return (
+    <div className={`overflow-hidden ${className} py-12 relative animation-container`}>
+      <div className="absolute w-[102%] h-[115px] bg-gradient-2 transform rotate-[-3deg] -left-2 -z-10 gpu-accelerated" />
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+        transition={transitionConfig}
+        className="flex items-center w-full h-[104px] bg-white-dark z-20 gpu-accelerated"
+      >
         <Marquee direction={direction} speed={speed} gradient={false}>
           {items.map((item, index) => (
             <div
@@ -33,7 +52,7 @@ export default function CustomMarquee({
             </div>
           ))}
         </Marquee>
-      </div>
+      </motion.div>
     </div>
   );
 }

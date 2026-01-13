@@ -1,0 +1,155 @@
+/* Glow Effects */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(83, 144, 227, 0.3),
+      0 0 10px rgba(83, 144, 227, 0.2), 0 0 15px rgba(83, 144, 227, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(83, 144, 227, 0.5),
+      0 0 20px rgba(83, 144, 227, 0.3), 0 0 30px rgba(83, 144, 227, 0.2);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(83, 144, 227, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(83, 144, 227, 0.8));
+  }
+}
+
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    rgba(83, 144, 227, 0.3),
+    rgba(19, 87, 179, 0.3),
+    rgba(83, 144, 227, 0.3)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+  opacity: 1;
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Blur Effects */
+.blur-backdrop {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(15, 20, 31, 0.7);
+}
+
+.blur-on-hover {
+  transition: filter 0.3s ease;
+}
+
+.blur-on-hover:hover {
+  filter: blur(2px);
+}
+
+/* Text Reveal */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+/* 3D Transforms */
+.perspective-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* GPU Acceleration */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Performance Containment */
+.animation-container {
+  contain: layout style paint;
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--white-light) 0%,
+    var(--blue-light) 50%,
+    var(--white-light) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Magnetic Effect Base */
+.magnetic-element {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Shadow Animations */
+@keyframes shadow-grow {
+  0% {
+    box-shadow: 0px 4px 8px 0px rgba(255, 255, 255, 0.04);
+  }
+  100% {
+    box-shadow: 0px 8px 16px 0px rgba(83, 144, 227, 0.2),
+      0px 4px 8px 0px rgba(83, 144, 227, 0.1);
+  }
+}
+
+.shadow-animate {
+  transition: box-shadow 0.3s ease;
+}
+
+.shadow-animate:hover {
+  animation: shadow-grow 0.3s ease forwards;
+}
+
