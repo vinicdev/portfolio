@@ -1,58 +1,70 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useMemo } from "react";
 import Container from "../Container";
 import IconTech from "../IconTech";
 import SmallLink from "../SmallLink";
 
 export default function Tech() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
+  const shouldReduceMotion = useReducedMotion();
 
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 200,
-        mass: 0.6,
+  const containerVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: shouldReduceMotion ? 0 : 0.08,
+          delayChildren: shouldReduceMotion ? 0 : 0.1,
+        },
       },
-    },
-  };
+    }),
+    [shouldReduceMotion]
+  );
 
-  const textVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        damping: 25,
-        stiffness: 120,
-        mass: 0.8,
+  const itemVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.5 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+          mass: 0.6,
+        },
       },
-    },
-  };
+    }),
+    [shouldReduceMotion]
+  );
+
+  const textVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -30 },
+      visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          damping: 25,
+          stiffness: 120,
+          mass: 0.8,
+        },
+      },
+    }),
+    [shouldReduceMotion]
+  );
 
   return (
     <Container style="mb-[200px] flex-wrap flex flex-row justify-between items-center gap-6 max-sm:mb-40">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
         variants={textVariants}
-        className="resize-about-text max-w-[660px] font-bold text-white-light"
+        className="resize-about-text max-w-[660px] font-bold text-white-light gpu-accelerated animation-container"
       >
         Trabalho com
         <span className="italic text-white-dark"> técnologias de ponta</span>
@@ -61,9 +73,9 @@ export default function Tech() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
         variants={containerVariants}
-        className="flex flex-col gap-6"
+        className="flex flex-col gap-6 animation-container"
       >
         <motion.div
           variants={containerVariants}

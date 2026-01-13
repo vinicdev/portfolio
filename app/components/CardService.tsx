@@ -1,7 +1,8 @@
 "use client";
 
-import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { ReactNode, useMemo } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useMagnetic } from "../hooks/useMagnetic";
 
 interface cardProps {
   title: string;
@@ -17,10 +18,26 @@ export default function CardService({
   height,
 }: cardProps) {
   const selectedHeight = height;
+  const shouldReduceMotion = useReducedMotion();
+  const magnetic = useMagnetic({ distance: 25, stiffness: 300, damping: 30 });
+
+  const hoverVariants = useMemo(
+    () => ({
+      y: shouldReduceMotion ? 0 : -10,
+      scale: shouldReduceMotion ? 1 : 1.02,
+      rotateY: shouldReduceMotion ? 0 : 5,
+      rotateX: shouldReduceMotion ? 0 : -2,
+    }),
+    [shouldReduceMotion]
+  );
 
   return (
     <motion.div
-      whileHover={{ y: -10, scale: 1.02 }}
+      ref={magnetic.ref}
+      style={{ x: magnetic.x, y: magnetic.y }}
+      onMouseMove={magnetic.handleMouseMove}
+      onMouseLeave={magnetic.handleMouseLeave}
+      whileHover={hoverVariants}
       transition={{
         type: "spring",
         damping: 20,
@@ -28,16 +45,17 @@ export default function CardService({
       }}
       className={`w-[300px] p-4 pt-12 rounded-lg bg-400 flex flex-col items-center box-shadow 
       h-[${selectedHeight}] ${selectedHeight === "300px" ? "h-[300px]" : ""}
-      max-[995px]:!h-[300px] max-sm:!w-[100%] cursor-pointer`}
-      style={{ height: `${height}px` }}
+      max-[995px]:!h-[300px] max-sm:!w-[100%] cursor-pointer magnetic-element glow-effect transform-3d gpu-accelerated animation-container`}
+      style={{ height: `${height}px`, transformStyle: "preserve-3d" }}
     >
       <motion.div
-        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileHover={{ scale: 1.1, rotate: 5, rotateZ: shouldReduceMotion ? 0 : 5 }}
         transition={{
           type: "spring",
           damping: 20,
           stiffness: 300,
         }}
+        className="gpu-accelerated"
       >
         {children}
       </motion.div>

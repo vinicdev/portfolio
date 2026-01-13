@@ -148,7 +148,35 @@ body {
   transition-duration: 150ms;
 }
 
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Performance optimizations for animations */
 [data-animate] {
   will-change: transform, opacity;
+}
+
+/* GPU Acceleration - Force hardware acceleration */
+.gpu-accelerated,
+.transform-3d,
+.magnetic-element {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remove will-change after animation to save memory */
+.motion-animation-complete {
+  will-change: auto;
 }

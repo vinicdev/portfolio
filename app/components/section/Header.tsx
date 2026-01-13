@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { useMagnetic } from "../../hooks/useMagnetic";
+import { useMemo } from "react";
 
 export default function Header() {
+  const shouldReduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const imageY = useTransform(scrollY, [0, 500], [0, 150], {
     clamp: false,
@@ -13,12 +16,17 @@ export default function Header() {
     clamp: false,
   });
 
+  const magnetic = useMagnetic({ distance: 15, stiffness: 300, damping: 30 });
+
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
       behavior: "smooth",
     });
   };
+
+  const titleText = useMemo(() => "FRONT-END", []);
+  const subtitleText = useMemo(() => "& UI DESIGN", []);
 
   return (
     <header className="flex flex-col items-center pt-[90px] relative min-h-screen max-sm:justify-center max-sm:pt-[120px] overflow-hidden">
@@ -45,40 +53,69 @@ export default function Header() {
           damping: 25,
           stiffness: 120,
           mass: 0.9,
-          delay: 0.2,
+          delay: shouldReduceMotion ? 0 : 0.2,
         }}
-        className="mt-[12px] title-risize text-white-normal font-bold flex flex-col items-center gap-4"
+        className="mt-[12px] title-risize text-white-normal font-bold flex flex-col items-center gap-4 gpu-accelerated"
       >
         <motion.span
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -50, filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)" }}
+          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{
             type: "spring",
             damping: 20,
             stiffness: 100,
-            delay: 0.4,
+            delay: shouldReduceMotion ? 0 : 0.4,
           }}
+          className="text-reveal"
         >
-          FRONT-END
+          {titleText.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              className="text-reveal-char inline-block"
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                delay: shouldReduceMotion ? 0 : 0.4 + index * 0.05,
+                duration: 0.5,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
         </motion.span>
         <motion.span
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 50, filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)" }}
+          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{
             type: "spring",
             damping: 20,
             stiffness: 100,
-            delay: 0.6,
+            delay: shouldReduceMotion ? 0 : 0.6,
           }}
-          className="text-transparent text-stroke"
+          className="text-transparent text-stroke text-reveal"
         >
-          & UI DESIGN
+          {subtitleText.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              className="text-reveal-char inline-block"
+              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                delay: shouldReduceMotion ? 0 : 0.6 + index * 0.05,
+                duration: 0.5,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
         </motion.span>
       </motion.h1>
 
       <motion.div
         style={{ y: imageY, opacity: imageOpacity }}
-        className="absolute cursor-pointer image-resize max-sm:relative max-sm:top-[-110px] max-sm:opacity-100"
+        className="absolute cursor-pointer image-resize max-sm:relative max-sm:top-[-110px] max-sm:opacity-100 gpu-accelerated"
       >
         <motion.div
           whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
@@ -87,7 +124,7 @@ export default function Header() {
             damping: 20,
             stiffness: 300,
           }}
-          className="grayscale-image"
+          className="grayscale-image transform-3d"
         >
           <Image
             width={550}
@@ -100,16 +137,20 @@ export default function Header() {
       </motion.div>
 
       <motion.div
+        ref={magnetic.ref}
+        style={{ x: magnetic.x, y: magnetic.y }}
+        onMouseMove={magnetic.handleMouseMove}
+        onMouseLeave={magnetic.handleMouseLeave}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
           type: "spring",
           damping: 25,
           stiffness: 100,
-          delay: 1,
+          delay: shouldReduceMotion ? 0 : 1,
         }}
         onClick={handleScrollDown}
-        className="w-[50px] h-[50px] absolute bottom-[85px] left-1/2 transform -translate-x-1/2 flex justify-center items-center cursor-pointer ml-[-25px] group"
+        className="w-[50px] h-[50px] absolute bottom-[85px] left-1/2 transform -translate-x-1/2 flex justify-center items-center cursor-pointer ml-[-25px] group magnetic-element glow-effect gpu-accelerated"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

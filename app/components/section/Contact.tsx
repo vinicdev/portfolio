@@ -1,23 +1,25 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useMagnetic } from "../../hooks/useMagnetic";
 import Container from "../Container";
 import Title from "../Title";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
+  const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  const magneticButton = useMagnetic({ distance: 15, stiffness: 400, damping: 25 });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica de envio do formulário
     console.log("Form submitted:", formData);
-    // Reset form
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -30,39 +32,45 @@ export default function Contact() {
     });
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
+  const containerVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: shouldReduceMotion ? 0 : 0.1,
+          delayChildren: shouldReduceMotion ? 0 : 0.1,
+        },
       },
-    },
-  };
+    }),
+    [shouldReduceMotion]
+  );
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 25,
-        stiffness: 120,
-        mass: 0.8,
+  const itemVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          damping: 25,
+          stiffness: 120,
+          mass: 0.8,
+        },
       },
-    },
-  };
+    }),
+    [shouldReduceMotion]
+  );
 
   return (
     <Container style="mb-[200px] max-sm:mb-40" id="contact">
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
         variants={containerVariants}
-        className="flex flex-col gap-12"
+        className="flex flex-col gap-12 animation-container"
       >
         <motion.div variants={itemVariants}>
           <Title titleText="Contato" />
@@ -87,14 +95,14 @@ export default function Contact() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.1, rotate: shouldReduceMotion ? 0 : 5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
                   type: "spring",
                   damping: 20,
                   stiffness: 300,
                 }}
-                className="w-[50px] h-[50px] bg-400 rounded-full flex items-center justify-center text-white-light hover:bg-blue-light transition-colors duration-300"
+                className="w-[50px] h-[50px] bg-400 rounded-full flex items-center justify-center text-white-light hover:bg-blue-light transition-colors duration-300 glow-effect gpu-accelerated"
               >
                 <FaGithub size={24} />
               </motion.a>
@@ -102,27 +110,27 @@ export default function Contact() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.1, rotate: shouldReduceMotion ? 0 : 5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
                   type: "spring",
                   damping: 20,
                   stiffness: 300,
                 }}
-                className="w-[50px] h-[50px] bg-400 rounded-full flex items-center justify-center text-white-light hover:bg-blue-light transition-colors duration-300"
+                className="w-[50px] h-[50px] bg-400 rounded-full flex items-center justify-center text-white-light hover:bg-blue-light transition-colors duration-300 glow-effect gpu-accelerated"
               >
                 <FaLinkedin size={24} />
               </motion.a>
               <motion.a
                 href="mailto:contato@exemplo.com"
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.1, rotate: shouldReduceMotion ? 0 : 5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
                   type: "spring",
                   damping: 20,
                   stiffness: 300,
                 }}
-                className="w-[50px] h-[50px] bg-400 rounded-full flex items-center justify-center text-white-light hover:bg-blue-light transition-colors duration-300"
+                className="w-[50px] h-[50px] bg-400 rounded-full flex items-center justify-center text-white-light hover:bg-blue-light transition-colors duration-300 glow-effect gpu-accelerated"
               >
                 <FaEnvelope size={24} />
               </motion.a>
@@ -213,15 +221,19 @@ export default function Contact() {
             </motion.div>
 
             <motion.button
+              ref={magneticButton.ref}
+              style={{ x: magneticButton.x, y: magneticButton.y }}
+              onMouseMove={magneticButton.handleMouseMove}
+              onMouseLeave={magneticButton.handleMouseLeave}
               type="submit"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: shouldReduceMotion ? 1 : 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{
                 type: "spring",
                 damping: 20,
                 stiffness: 300,
               }}
-              className="w-full px-6 py-3 bg-gradient-1 text-white-light font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300 shadow-lg"
+              className="w-full px-6 py-3 bg-gradient-1 text-white-light font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300 shadow-lg glow-effect magnetic-element gpu-accelerated"
             >
               Enviar Mensagem
             </motion.button>
