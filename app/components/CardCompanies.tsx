@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface CardCompaniesProps {
   textCard: string;
@@ -18,9 +21,33 @@ export default function CardCompanies({
   }
 
   return (
-    <div className="flex flex-col items-start gap-2 max-sm:w-full">
-      <div className="w-[250px] h-[350px] border border-600 bg-gradient-3 rounded flex items-center justify-center overflow-hidden max-sm:w-full">
-        <div className="w-[80%] h-[80%] flex items-center justify-center">
+    <motion.div
+      whileHover={{ y: -8 }}
+      transition={{
+        type: "spring",
+        damping: 20,
+        stiffness: 300,
+      }}
+      className="flex flex-col items-start gap-2 max-sm:w-full cursor-pointer"
+    >
+      <motion.div
+        whileHover={{ scale: 1.05, borderColor: "#5390e3" }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 300,
+        }}
+        className="w-[250px] h-[350px] border border-600 bg-gradient-3 rounded flex items-center justify-center overflow-hidden max-sm:w-full"
+      >
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 300,
+          }}
+          className="w-[80%] h-[80%] flex items-center justify-center"
+        >
           <Image
             src={`/companies/${imageSrc}.png`}
             width={160}
@@ -28,11 +55,11 @@ export default function CardCompanies({
             alt={altImage}
             className="object-contain"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <span className="text-[14px] font-light text-white-normal">
         {textCard}
       </span>
-    </div>
+    </motion.div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 
 interface MarqueeProps {
@@ -19,7 +20,17 @@ export default function CustomMarquee({
     <div className={`overflow-hidden ${className} py-12 relative`}>
       <div className="absolute w-[102%] h-[115px] bg-gradient-2 transform rotate-[-3deg] -left-2 -z-10" />
 
-      <div className="flex items-center w-full h-[104px] bg-white-dark z-20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          type: "spring",
+          damping: 25,
+          stiffness: 100,
+        }}
+        className="flex items-center w-full h-[104px] bg-white-dark z-20"
+      >
         <Marquee direction={direction} speed={speed} gradient={false}>
           {items.map((item, index) => (
             <div
@@ -33,7 +44,7 @@ export default function CustomMarquee({
             </div>
           ))}
         </Marquee>
-      </div>
+      </motion.div>
     </div>
   );
 }
