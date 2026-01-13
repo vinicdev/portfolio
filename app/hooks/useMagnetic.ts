@@ -11,7 +11,7 @@ interface UseMagneticOptions {
 
 export function useMagnetic(options: UseMagneticOptions = {}) {
   const { distance: maxDistance = 30, stiffness = 300, damping = 30 } = options;
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);

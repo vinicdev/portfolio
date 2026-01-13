@@ -33,7 +33,7 @@ export default function CardService({
 
   return (
     <motion.div
-      ref={magnetic.ref}
+      ref={magnetic.ref as React.RefObject<HTMLDivElement>}
       style={{ x: magnetic.x, y: magnetic.y }}
       onMouseMove={magnetic.handleMouseMove}
       onMouseLeave={magnetic.handleMouseLeave}

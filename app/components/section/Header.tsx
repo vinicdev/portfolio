@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 import { useMagnetic } from "../../hooks/useMagnetic";
 import { useMemo } from "react";
 
@@ -58,7 +63,11 @@ export default function Header() {
         className="mt-[12px] title-risize text-white-normal font-bold flex flex-col items-center gap-4 gpu-accelerated"
       >
         <motion.span
-          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -50, filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)" }}
+          initial={{
+            opacity: 0,
+            x: shouldReduceMotion ? 0 : -50,
+            filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)",
+          }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{
             type: "spring",
@@ -85,7 +94,11 @@ export default function Header() {
           ))}
         </motion.span>
         <motion.span
-          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 50, filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)" }}
+          initial={{
+            opacity: 0,
+            x: shouldReduceMotion ? 0 : 50,
+            filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)",
+          }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{
             type: "spring",
@@ -114,17 +127,18 @@ export default function Header() {
       </motion.h1>
 
       <motion.div
-        style={{ y: imageY, opacity: imageOpacity }}
-        className="absolute cursor-pointer image-resize max-sm:relative max-sm:top-[-110px] max-sm:opacity-100 gpu-accelerated"
+        style={{ y: imageY }}
+        className="absolute image-resize max-sm:relative max-sm:top-[-110px] max-sm:opacity-100 flex flex-col items-center gpu-accelerated"
       >
         <motion.div
+          style={{ opacity: imageOpacity }}
           whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
           transition={{
             type: "spring",
             damping: 20,
             stiffness: 300,
           }}
-          className="grayscale-image transform-3d"
+          className="grayscale-image transform-3d cursor-pointer gpu-accelerated"
         >
           <Image
             width={550}
@@ -134,36 +148,39 @@ export default function Header() {
             className="w-full h-auto"
           />
         </motion.div>
-      </motion.div>
 
-      <motion.div
-        ref={magnetic.ref}
-        style={{ x: magnetic.x, y: magnetic.y }}
-        onMouseMove={magnetic.handleMouseMove}
-        onMouseLeave={magnetic.handleMouseLeave}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          type: "spring",
-          damping: 25,
-          stiffness: 100,
-          delay: shouldReduceMotion ? 0 : 1,
-        }}
-        onClick={handleScrollDown}
-        className="w-[50px] h-[50px] absolute bottom-[85px] left-1/2 transform -translate-x-1/2 flex justify-center items-center cursor-pointer ml-[-25px] group magnetic-element glow-effect gpu-accelerated"
-      >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: [0.4, 0, 0.2, 1],
+          ref={magnetic.ref as React.RefObject<HTMLDivElement>}
+          style={{
+            x: magnetic.x,
+            y: magnetic.y,
           }}
+          onMouseMove={magnetic.handleMouseMove}
+          onMouseLeave={magnetic.handleMouseLeave}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            type: "spring",
+            damping: 25,
+            stiffness: 100,
+            delay: shouldReduceMotion ? 0 : 1,
+          }}
+          onClick={handleScrollDown}
+          className="w-[50px] h-[50px] mt-8 flex justify-center items-center cursor-pointer group magnetic-element glow-effect gpu-accelerated relative z-10"
         >
-          <FaAngleDown
-            size="18px"
-            className="text-black-4 group-hover:text-blue-light transition-colors duration-300"
-          />
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: [0.4, 0, 0.2, 1],
+            }}
+          >
+            <FaAngleDown
+              size="18px"
+              className="text-black-4 group-hover:text-blue-light transition-colors duration-300"
+            />
+          </motion.div>
         </motion.div>
       </motion.div>
     </header>

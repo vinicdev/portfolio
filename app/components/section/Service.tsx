@@ -71,8 +71,8 @@ export default function Service() {
             >
               <motion.div variants={itemVariants}>
                 <CardService
-                  title="Design intuitivo "
-                  text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                  title="Desenvolvimento Front-end"
+                  text="Criação de interfaces modernas e responsivas com as tecnologias mais recentes."
                   height="300"
                 >
                   <div
@@ -84,8 +84,8 @@ export default function Service() {
 
               <motion.div variants={itemVariants}>
                 <CardService
-                  title="Design intuitivo "
-                  text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                  title="UI/UX Design"
+                  text="Design de interfaces intuitivas que combinam estética e funcionalidade."
                   height="350"
                 >
                   <div
@@ -97,8 +97,8 @@ export default function Service() {
 
               <motion.div variants={itemVariants}>
                 <CardService
-                  title="Design intuitivo "
-                  text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                  title="Consultoria Técnica"
+                  text="Consultoria em tecnologias front-end e melhores práticas de desenvolvimento."
                   height="300"
                 >
                   <div

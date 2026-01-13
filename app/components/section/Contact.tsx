@@ -15,7 +15,11 @@ export default function Contact() {
     message: "",
   });
 
-  const magneticButton = useMagnetic({ distance: 15, stiffness: 400, damping: 25 });
+  const magneticButton = useMagnetic({
+    distance: 15,
+    stiffness: 400,
+    damping: 25,
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,7 +57,7 @@ export default function Contact() {
         opacity: 1,
         y: 0,
         transition: {
-          type: "spring",
+          type: "spring" as const,
           damping: 25,
           stiffness: 120,
           mass: 0.8,
@@ -92,7 +96,7 @@ export default function Contact() {
 
             <div className="flex gap-4">
               <motion.a
-                href="https://github.com"
+                href="https://github.com/vinicdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, rotate: shouldReduceMotion ? 0 : 5 }}
@@ -107,7 +111,7 @@ export default function Contact() {
                 <FaGithub size={24} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/vinicdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, rotate: shouldReduceMotion ? 0 : 5 }}
@@ -122,7 +126,7 @@ export default function Contact() {
                 <FaLinkedin size={24} />
               </motion.a>
               <motion.a
-                href="mailto:contato@exemplo.com"
+                href="mailto:dev.viniciuscardoso@gmail.com"
                 whileHover={{ scale: 1.1, rotate: shouldReduceMotion ? 0 : 5 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{
@@ -142,86 +146,80 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="flex-1 w-full flex flex-col gap-6"
           >
-            <motion.div
-              whileFocus={{ scale: 1.02 }}
-              transition={{
-                type: "spring",
-                damping: 25,
-                stiffness: 300,
-              }}
-              className="flex flex-col gap-2"
-            >
+            <div className="flex flex-col gap-2">
               <label htmlFor="name" className="text-gray-6 text-sm font-medium">
                 Nome
               </label>
-              <input
+              <motion.input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-black-light border border-600 rounded-lg text-white-light focus:outline-none focus:border-blue-light transition-colors duration-300"
+                whileFocus={{ scale: 1.02 }}
+                transition={{
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 300,
+                }}
+                className="w-full px-4 py-3 bg-black-light border border-600 rounded-lg text-white-light focus:outline-none focus:border-blue-light transition-colors duration-300 glow-input gpu-accelerated"
                 placeholder="Seu nome"
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              whileFocus={{ scale: 1.02 }}
-              transition={{
-                type: "spring",
-                damping: 25,
-                stiffness: 300,
-              }}
-              className="flex flex-col gap-2"
-            >
+            <div className="flex flex-col gap-2">
               <label
                 htmlFor="email"
                 className="text-gray-6 text-sm font-medium"
               >
                 Email
               </label>
-              <input
+              <motion.input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-black-light border border-600 rounded-lg text-white-light focus:outline-none focus:border-blue-light transition-colors duration-300"
+                whileFocus={{ scale: 1.02 }}
+                transition={{
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 300,
+                }}
+                className="w-full px-4 py-3 bg-black-light border border-600 rounded-lg text-white-light focus:outline-none focus:border-blue-light transition-colors duration-300 glow-input gpu-accelerated"
                 placeholder="seu@email.com"
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              whileFocus={{ scale: 1.02 }}
-              transition={{
-                type: "spring",
-                damping: 25,
-                stiffness: 300,
-              }}
-              className="flex flex-col gap-2"
-            >
+            <div className="flex flex-col gap-2">
               <label
                 htmlFor="message"
                 className="text-gray-6 text-sm font-medium"
               >
                 Mensagem
               </label>
-              <textarea
+              <motion.textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 bg-black-light border border-600 rounded-lg text-white-light focus:outline-none focus:border-blue-light transition-colors duration-300 resize-none"
+                whileFocus={{ scale: 1.02 }}
+                transition={{
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 300,
+                }}
+                className="w-full px-4 py-3 bg-black-light border border-600 rounded-lg text-white-light focus:outline-none focus:border-blue-light transition-colors duration-300 resize-none glow-input gpu-accelerated"
                 placeholder="Sua mensagem..."
               />
-            </motion.div>
+            </div>
 
             <motion.button
-              ref={magneticButton.ref}
+              ref={magneticButton.ref as React.RefObject<HTMLButtonElement>}
               style={{ x: magneticButton.x, y: magneticButton.y }}
               onMouseMove={magneticButton.handleMouseMove}
               onMouseLeave={magneticButton.handleMouseLeave}

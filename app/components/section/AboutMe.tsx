@@ -8,7 +8,7 @@ import Title from "../Title";
 
 export default function AboutMe() {
   const shouldReduceMotion = useReducedMotion();
-  const titleText = useMemo(() => "Lorem Ipsum has been the industry's", []);
+  const titleText = useMemo(() => "Transformando ideias em experiências digitais incríveis", []);
 
   const containerVariants = useMemo(
     () => ({
@@ -112,10 +112,12 @@ export default function AboutMe() {
           className="w-[45%] max-w-[577px] max-[1390px]:max-w-full max-[1390px]:w-full"
         >
           <p className="resize-text text-gray-7 w-full">
-            Lorem Ipsum has been the industry s standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit.
+            Sou um desenvolvedor front-end apaixonado por criar interfaces modernas, 
+            intuitivas e responsivas. Com experiência em tecnologias de ponta como React, 
+            Next.js, TypeScript e Flutter, transformo conceitos em experiências digitais 
+            que encantam usuários e geram resultados. Meu foco está em escrever código limpo, 
+            performático e escalável, sempre priorizando a melhor experiência do usuário e as 
+            melhores práticas de desenvolvimento.
           </p>
         </motion.div>
       </motion.div>
