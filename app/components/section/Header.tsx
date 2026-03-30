@@ -30,8 +30,8 @@ export default function Header() {
     });
   };
 
-  const titleText = useMemo(() => "FRONT-END", []);
-  const subtitleText = useMemo(() => "& UI DESIGN", []);
+  const titleText = useMemo(() => "FULL STACK", []);
+  const subtitleText = useMemo(() => "DEVELOPER", []);
 
   return (
     <header className="flex flex-col items-center pt-[90px] relative min-h-screen max-sm:justify-center max-sm:pt-[120px] overflow-hidden">
@@ -50,88 +50,10 @@ export default function Header() {
         e eu sou freelancer
       </motion.p>
 
-<<<<<<< HEAD
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          type: "spring",
-          damping: 25,
-          stiffness: 120,
-          mass: 0.9,
-          delay: shouldReduceMotion ? 0 : 0.2,
-        }}
-        className="mt-[12px] title-risize text-white-normal font-bold flex flex-col items-center gap-4 gpu-accelerated"
-      >
-        <motion.span
-          initial={{
-            opacity: 0,
-            x: shouldReduceMotion ? 0 : -50,
-            filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)",
-          }}
-          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-          transition={{
-            type: "spring",
-            damping: 20,
-            stiffness: 100,
-            delay: shouldReduceMotion ? 0 : 0.4,
-          }}
-          className="text-reveal"
-        >
-          {titleText.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              className="text-reveal-char inline-block"
-              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{
-                delay: shouldReduceMotion ? 0 : 0.4 + index * 0.05,
-                duration: 0.5,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </motion.span>
-        <motion.span
-          initial={{
-            opacity: 0,
-            x: shouldReduceMotion ? 0 : 50,
-            filter: shouldReduceMotion ? "blur(0px)" : "blur(10px)",
-          }}
-          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-          transition={{
-            type: "spring",
-            damping: 20,
-            stiffness: 100,
-            delay: shouldReduceMotion ? 0 : 0.6,
-          }}
-          className="text-transparent text-stroke text-reveal"
-        >
-          {subtitleText.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              className="text-reveal-char inline-block"
-              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{
-                delay: shouldReduceMotion ? 0 : 0.6 + index * 0.05,
-                duration: 0.5,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </motion.span>
-      </motion.h1>
-=======
       <h1 className="mt-[12px] title-risize text-white-normal font-bold flex flex-col items-center gap-4">
-        <span>FULL STACK</span>
-        <span className="text-transparent text-stroke">DEVELOPER</span>
+        <span>{titleText}</span>
+        <span className="text-transparent text-stroke">{subtitleText}</span>
       </h1>
->>>>>>> 50ad618 (fix: finish my portfolio)
 
       <motion.div
         style={{ y: imageY }}

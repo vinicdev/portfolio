@@ -28,7 +28,7 @@ export default function CardService({
       rotateY: shouldReduceMotion ? 0 : 5,
       rotateX: shouldReduceMotion ? 0 : -2,
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   return (
@@ -46,10 +46,13 @@ export default function CardService({
       className={`w-[300px] p-4 pt-12 rounded-lg bg-400 flex flex-col items-center box-shadow 
       h-[${selectedHeight}] ${selectedHeight === "300px" ? "h-[300px]" : ""}
       max-[995px]:!h-[300px] max-sm:!w-[100%] cursor-pointer magnetic-element glow-effect transform-3d gpu-accelerated animation-container`}
-      style={{ height: `${height}px`, transformStyle: "preserve-3d" }}
     >
       <motion.div
-        whileHover={{ scale: 1.1, rotate: 5, rotateZ: shouldReduceMotion ? 0 : 5 }}
+        whileHover={{
+          scale: 1.1,
+          rotate: 5,
+          rotateZ: shouldReduceMotion ? 0 : 5,
+        }}
         transition={{
           type: "spring",
           damping: 20,

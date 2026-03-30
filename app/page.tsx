@@ -1,11 +1,7 @@
 import AboutMe from "./components/section/AboutMe";
 import Companies from "./components/section/Companies";
 import Contact from "./components/section/Contact";
-<<<<<<< HEAD
-import Footer from "./components/section/Footer";
-=======
 import Footer from "./components/Footer";
->>>>>>> 50ad618 (fix: finish my portfolio)
 import Header from "./components/section/Header";
 import Service from "./components/section/Service";
 import Tech from "./components/section/Tech";
@@ -14,11 +10,7 @@ import CustomMarquee from "./components/Marquee";
 export default function Home() {
   const items = [
     "React",
-<<<<<<< HEAD
-    "Fluttzer",
-=======
     "Flutter",
->>>>>>> 50ad618 (fix: finish my portfolio)
     "NextJS",
     "Typescript",
     ".NET",

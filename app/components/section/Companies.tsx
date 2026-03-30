@@ -20,24 +20,7 @@ export default function Companies() {
         },
       },
     }),
-    [shouldReduceMotion]
-  );
-
-  const itemVariants = useMemo(
-    () => ({
-      hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          type: "spring",
-          damping: 25,
-          stiffness: 120,
-          mass: 0.8,
-        },
-      },
-    }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   const titleVariants = useMemo(
@@ -52,9 +35,9 @@ export default function Companies() {
           stiffness: 120,
           mass: 0.8,
         },
-      },
+      } as const,
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   return (
@@ -85,37 +68,13 @@ export default function Companies() {
           em meu serviço
         </motion.div>
 
-<<<<<<< HEAD
-        <motion.div
-          variants={containerVariants}
-          className="flex flex-wrap gap-4 justify-center items-center"
-        >
-          <motion.div variants={itemVariants}>
-            <CardCompanies textCard="Solvis" imageSrc="solvis" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardCompanies textCard="BNE" imageSrc="bne" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardCompanies textCard="Harpia Tech" imageSrc="harpia" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardCompanies textCard="360 ERP" imageSrc="360" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <CardCompanies textCard="Tex4" imageSrc="tex4" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
-=======
         <div className="flex flex-wrap gap-4 justify-center items-center">
           <CardCompanies textCard="Solvis" imageSrc="solvis" />
           <CardCompanies textCard="BNE" imageSrc="bne" />
           <CardCompanies textCard="Harpia Tech" imageSrc="harpia" />
           <CardCompanies textCard="360 ERP" imageSrc="360" />
         </div>
-      </div>
->>>>>>> 50ad618 (fix: finish my portfolio)
+      </motion.div>
     </Container>
   );
 }

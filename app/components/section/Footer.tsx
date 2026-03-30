@@ -18,7 +18,7 @@ export default function Footer() {
           damping: 18,
           stiffness: 400,
         },
-      },
+      } as const,
       tap: {
         scale: 0.9,
         transition: {
@@ -26,9 +26,9 @@ export default function Footer() {
           damping: 20,
           stiffness: 500,
         },
-      },
+      } as const,
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   return (
@@ -101,4 +101,3 @@ export default function Footer() {
     </footer>
   );
 }
-

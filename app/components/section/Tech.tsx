@@ -20,7 +20,7 @@ export default function Tech() {
         },
       },
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   const itemVariants = useMemo(
@@ -35,9 +35,9 @@ export default function Tech() {
           stiffness: 200,
           mass: 0.6,
         },
-      },
+      } as const,
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   const textVariants = useMemo(
@@ -52,9 +52,9 @@ export default function Tech() {
           stiffness: 120,
           mass: 0.8,
         },
-      },
+      } as const,
     }),
-    [shouldReduceMotion]
+    [shouldReduceMotion],
   );
 
   return (
@@ -106,15 +106,9 @@ export default function Tech() {
             Atualmente algumas das principais técnologias utilizadas nos meu
             dia-dia, mas sempre estou aberto a novas tecnologias.
           </span>
-<<<<<<< HEAD
-          <SmallLink textSmall="Contact me" linkSmall="#contact" />
+          <SmallLink textSmall="Falar comigo" linkSmall="/#contato" />
         </motion.div>
       </motion.div>
-=======
-          <SmallLink textSmall="Falar comigo" linkSmall="/#contato" />
-        </div>
-      </div>
->>>>>>> 50ad618 (fix: finish my portfolio)
     </Container>
   );
 }
