@@ -85,6 +85,7 @@ export default function Companies() {
           em meu serviço
         </motion.div>
 
+<<<<<<< HEAD
         <motion.div
           variants={containerVariants}
           className="flex flex-wrap gap-4 justify-center items-center"
@@ -106,6 +107,15 @@ export default function Companies() {
           </motion.div>
         </motion.div>
       </motion.div>
+=======
+        <div className="flex flex-wrap gap-4 justify-center items-center">
+          <CardCompanies textCard="Solvis" imageSrc="solvis" />
+          <CardCompanies textCard="BNE" imageSrc="bne" />
+          <CardCompanies textCard="Harpia Tech" imageSrc="harpia" />
+          <CardCompanies textCard="360 ERP" imageSrc="360" />
+        </div>
+      </div>
+>>>>>>> 50ad618 (fix: finish my portfolio)
     </Container>
   );
 }

@@ -106,9 +106,15 @@ export default function Tech() {
             Atualmente algumas das principais técnologias utilizadas nos meu
             dia-dia, mas sempre estou aberto a novas tecnologias.
           </span>
+<<<<<<< HEAD
           <SmallLink textSmall="Contact me" linkSmall="#contact" />
         </motion.div>
       </motion.div>
+=======
+          <SmallLink textSmall="Falar comigo" linkSmall="/#contato" />
+        </div>
+      </div>
+>>>>>>> 50ad618 (fix: finish my portfolio)
     </Container>
   );
 }

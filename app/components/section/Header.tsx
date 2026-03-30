@@ -50,6 +50,7 @@ export default function Header() {
         e eu sou freelancer
       </motion.p>
 
+<<<<<<< HEAD
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -125,6 +126,12 @@ export default function Header() {
           ))}
         </motion.span>
       </motion.h1>
+=======
+      <h1 className="mt-[12px] title-risize text-white-normal font-bold flex flex-col items-center gap-4">
+        <span>FULL STACK</span>
+        <span className="text-transparent text-stroke">DEVELOPER</span>
+      </h1>
+>>>>>>> 50ad618 (fix: finish my portfolio)
 
       <motion.div
         style={{ y: imageY }}

@@ -55,6 +55,7 @@ export default function Service() {
         ></motion.div>
 
         <div className="flex flex-col items-center gap-12 mb-6">
+<<<<<<< HEAD
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -109,6 +110,87 @@ export default function Service() {
               </motion.div>
             </motion.div>
           </motion.div>
+=======
+          <div className="relative z-10 h-full gap-12 flex flex-col items-start px-4 max-w-[1440px]">
+            <Title titleText="Serviços" />
+            <div className=" flex flex-wrap justify-center items-end gap-12">
+              <CardService
+                title="Desenvolvimento Frontend"
+                text="Interfaces modernas usando React, Next.js e Tailwind, com foco em experiência de usuário e responsividade."
+                height="300"
+              >
+                <div
+                  style={{ backgroundImage: "url(./free_pen.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+
+              <CardService
+                title="Desenvolvimento Mobile"
+                text="Apps Flutter cross-platform com alto desempenho e animações fluídas, desde protótipo até produção."
+                height="350"
+              >
+                <div
+                  style={{ backgroundImage: "url(./computer.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+
+              <CardService
+                title="Backend e APIs"
+                text="APIs robustas em Node.js/Express, integração com bancos SQL/NoSQL, autenticação e deploy em nuvem."
+                height="300"
+              >
+                <div
+                  style={{ backgroundImage: "url(./world-search.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+            </div>
+
+            {/* {moreService && (
+            <div className="flex flex-wrap justify-center items-start gap-12">
+              <CardService
+                title="Design intuitivo "
+                text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                height="300"
+              >
+                <div
+                  style={{ backgroundImage: "url(./free_pen.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+
+              <CardService
+                title="Design intuitivo "
+                text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                height="350"
+              >
+                <div
+                  style={{ backgroundImage: "url(./computer.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+
+              <CardService
+                title="Design intuitivo "
+                text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                height="300"
+              >
+                <div
+                  style={{ backgroundImage: "url(./world-search.svg)" }}
+                  className="w-[60px] h-[60px] bg-no-repeat"
+                />
+              </CardService>
+            </div>
+          )} */}
+          </div>
+
+          {/* Botão ver mais serviços */}
+          {/* <Button onClick={OpenMoreServices}>
+          {moreService ? "Ver menos" : "Ver todos serviços "}
+        </Button> */}
+>>>>>>> 50ad618 (fix: finish my portfolio)
         </div>
       </section>
     </>
